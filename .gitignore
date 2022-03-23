@@ -1,0 +1,24 @@
+.boot-server
+/node_modules
+/public/hot
+/public/js/app.js
+/public/storage
+/storage/*.key
+storage/framework/laravel-excel
+/vendor
+/app/Http/Controllers/TestController.php
+/.vscode
+/.history
+.env
+.env.*
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/public/.DS_Store
+# tests
+phpunit.xml
+/public/resources/js/website_eichlers.code-workspace
+storage/framework/laravel-excel
+storage/media-library
