@@ -1,18 +1,19 @@
 <template>
 	<div>
-		<div class="flex" :class="{'border-b border-40':!show}">
+		<div v-if="!show" class="flex border-b border-40">
 			<div class="py-6 px-8 w-1/5 text-80">{{field.title}}</div>
 			<div class="py-6 px-8 w-1/2">
 				<button
 					type="button"
-					class="btn btn-default btn-primary inline-flex items-center relative"
+					class="cursor-pointer dim inline-block text-primary font-bold"
 					@click="toggle()"
-				>{{btnText}}</button>
+				>Show Content</button>
 			</div>
 		</div>
 		<div v-if="show">
 			<div v-for="childField in field.fields">
 				<component
+					class="collapsible-field"
 					:is="'form-' + childField.component"
 					:errors="errors"
 					:resource-id="resourceId"
@@ -21,6 +22,16 @@
 					:ref="'field-' + childField.attribute"
 					:show-help-text="childField.helpText != null"
 				/>
+			</div>
+		</div>
+		<div v-if="show" class="flex border-b border-40 pb-6">
+			<div class="px-8 w-1/5 text-80"></div>
+			<div class="px-8 w-1/2">
+				<button
+					type="button"
+					class="cursor-pointer dim inline-block text-primary font-bold"
+					@click="toggle()"
+				>Hide Content</button>
 			</div>
 		</div>
 	</div>
@@ -52,3 +63,8 @@ export default {
 	},
 }
 </script>
+<style>
+.collapsible-field > .border-b{
+	border:0;
+}
+</style>

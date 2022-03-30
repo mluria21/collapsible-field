@@ -7,7 +7,7 @@ export default {
 
     computed:{
         btnText(){
-            return this.show ? 'Hide' : 'Show More'
+            return this.show ? 'Hide Content' : 'Show Content'
         }
     },
 
